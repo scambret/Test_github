@@ -6,5 +6,5 @@ def test_all():
   assert x == 2
   assert isinstance(x, int)
   y = change(x)
-  assert y == 4
+  assert y == 5
   assert isinstance(y, int)
