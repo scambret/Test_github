@@ -24,7 +24,7 @@ jobs:
         conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
         #         pip install -r requirements.txt
         pip install black==19.10b0
-        make setup_lint
+        #         make setup_lint
     - name: Test with pytest
       run: |
         conda install pytest
