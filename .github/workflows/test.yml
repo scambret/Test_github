@@ -1,6 +1,12 @@
-name: Python Package using Conda
+name: Test trigger
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      #     - master
+  pull_request:
+      
 
 jobs:
   build-linux:
@@ -10,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python 3.10
+    - name: Set up Python 3.8.8
       uses: actions/setup-python@v3
       with:
         python-version: 3.8.8
@@ -22,9 +28,8 @@ jobs:
       run: |
         set -eux
         conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
-        #         pip install -r requirements.txt
+        pip install -r requirements.txt
         pip install black==19.10b0
-        #         make setup_lint
     - name: Test with pytest
       run: |
         conda install pytest
