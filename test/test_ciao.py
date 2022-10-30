@@ -6,5 +6,5 @@ def let_s_test_it(x: int) -> int:
 def test_intially():
   x = 2
   assert isinstance(x, int)
-  assert let_s_test_it(x) == 2
+  assert let_s_test_it(x) == 3
   assert isinstance(let_s_test_it(x), int)
